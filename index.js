@@ -82,7 +82,13 @@ const fs = require("fs");
 
 // Create file and write
 
-fs.writeFile("test.txt", "New Content!", (err) => {
+/* fs.writeFile("test.txt", "New Content!", (err) => {
   if (err) throw err;
   console.log("File written...");
+}); */
+
+// Delete file
+fs.unlink("test.txt", (err) => {
+  if (err) throw err;
+  console.log("File deleted correctly!");
 });
