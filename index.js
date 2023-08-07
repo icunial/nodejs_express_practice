@@ -42,4 +42,6 @@ function sum(a, b) {
   console.log(a + b);
 }
 
-setTimeout(sum, 2000, 1, 2);
+// setTimeout(sum, 2000, 1, 2);
+
+setInterval(showTopic, 1000, "NodeJs");
