@@ -68,8 +68,21 @@ const fs = require("fs");
   else console.log("File renamed...");
 }); */
 
-if (fs.existsSync("greetings.js")) {
+/* if (fs.existsSync("greetings.js")) {
   console.log("File exists!");
 } else {
   console.log("File not exists!");
-}
+} */
+
+// Add content to a file
+/* fs.appendFile("newName.txt", "\nLine 4", (err) => {
+  if (err) throw err;
+  console.log("File updated!");
+}); */
+
+// Create file and write
+
+fs.writeFile("test.txt", "New Content!", (err) => {
+  if (err) throw err;
+  console.log("File written...");
+});
