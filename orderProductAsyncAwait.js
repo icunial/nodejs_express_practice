@@ -21,7 +21,7 @@ function processOrder(response) {
   });
 }
 
-orderProduct("cup")
+/* orderProduct("book")
   .then((response) => {
     console.log("Answer received!");
     console.log(response);
@@ -29,4 +29,19 @@ orderProduct("cup")
   })
   .then((response) => {
     console.log(response);
-  });
+  })
+  .catch((err) => {
+    console.log(err);
+  }); */
+
+async function makeOrder(product) {
+  try {
+    const response = await orderProduct(product);
+    const processResponse = await processOrder(response);
+    console.log(processResponse);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+makeOrder("book");
