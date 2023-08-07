@@ -36,4 +36,10 @@ function showTopic(topic) {
   console.log(`I am learning ${topic}`);
 }
 
-setTimeout(showTopic, 1000, "NodeJs");
+// setTimeout(showTopic, 1000, "NodeJs");
+
+function sum(a, b) {
+  console.log(a + b);
+}
+
+setTimeout(sum, 2000, 1, 2);
