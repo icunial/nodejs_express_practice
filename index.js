@@ -63,7 +63,13 @@ const fs = require("fs");
   else console.log(data.split("\n"));
 }); */
 
-fs.rename("text.txt", "newName.txt", (err) => {
+/* fs.rename("text.txt", "newName.txt", (err) => {
   if (err) console.error(err.message);
   else console.log("File renamed...");
-});
+}); */
+
+if (fs.existsSync("greetings.js")) {
+  console.log("File exists!");
+} else {
+  console.log("File not exists!");
+}
