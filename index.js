@@ -48,8 +48,17 @@ function sum(a, b) {
 
 let sec = 1;
 
-const intervalID = setInterval(() => {
+/* const intervalID = setInterval(() => {
   if (sec === 10) clearInterval(intervalID);
   console.log(`${sec} second/s...`);
   sec++;
-}, 1000);
+}, 1000); */
+
+// Fs module -> File System
+
+const fs = require("fs");
+
+fs.readFile("text.txt", "utf-8", (err, data) => {
+  if (err) console.error(err.message);
+  else console.log(data.split("\n"));
+});
