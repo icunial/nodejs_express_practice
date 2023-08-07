@@ -1,8 +1,8 @@
 const EventEmitter = require("events");
 
 const productsEmitter = new EventEmitter();
-productsEmitter.on("buy", () => {
-  console.log("You have a new buy!");
+productsEmitter.on("buy", (total) => {
+  console.log(`You have a new buy! $${total}`);
 });
 
-productsEmitter.emit("buy");
+productsEmitter.emit("buy", 500);
