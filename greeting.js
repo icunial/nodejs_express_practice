@@ -2,4 +2,11 @@ function greeting(name) {
   return `Hello, ${name}`;
 }
 
-module.exports = greeting;
+function greetingHelloWorld() {
+  return `Hello World!`;
+}
+
+module.exports = {
+  greeting,
+  greetingHelloWorld,
+};
