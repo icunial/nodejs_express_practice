@@ -1,0 +1,10 @@
+{
+    "title": "Title 1",
+    "numViews": 1000,
+    "numLikes": 500,
+    "topics": [
+        "Javascript",
+        "NodeJs"
+    ],
+    "isPublic": true
+}
