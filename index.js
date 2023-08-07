@@ -58,7 +58,12 @@ let sec = 1;
 
 const fs = require("fs");
 
-fs.readFile("text.txt", "utf-8", (err, data) => {
+/* fs.readFile("text.txt", "utf-8", (err, data) => {
   if (err) console.error(err.message);
   else console.log(data.split("\n"));
+}); */
+
+fs.rename("text.txt", "newName.txt", (err) => {
+  if (err) console.error(err.message);
+  else console.log("File renamed...");
 });
