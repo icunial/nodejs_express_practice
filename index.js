@@ -44,4 +44,12 @@ function sum(a, b) {
 
 // setTimeout(sum, 2000, 1, 2);
 
-setInterval(showTopic, 1000, "NodeJs");
+//setInterval(showTopic, 1000, "NodeJs");
+
+let sec = 1;
+
+const intervalID = setInterval(() => {
+  if (sec === 10) clearInterval(intervalID);
+  console.log(`${sec} second/s...`);
+  sec++;
+}, 1000);
