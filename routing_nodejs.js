@@ -21,9 +21,14 @@ function handleGetRequest(req, res) {
   } else if (path === "/courses") {
     res.statusCode = 200;
     res.end(JSON.stringify(courses));
+  } else if (path === "/courses/coding") {
+    res.statusCode = 200;
+    res.end(JSON.stringify(courses.coding));
   }
 }
 
 const PORT = process.env.PORT || 5000;
 
-server.listen(`Server is listening on port: ${PORT}`);
+server.listen(PORT, () => {
+  console.log(`Server is listening on port: ${PORT}`);
+});
