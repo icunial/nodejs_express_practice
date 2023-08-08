@@ -37,8 +37,19 @@ function handleGetRequest(req, res) {
 
 function handlePostRequest(req, res) {
   if (req.url === "/courses/coding") {
-    res.statusCode = 200;
-    return res.end("The server received a POST request for /courses/coding");
+    let body = "";
+
+    req.on("data", (content) => {
+      body += content.toString();
+    });
+
+    req.on("end", () => {
+      console.log(body);
+      body = JSON.parse(body);
+      console.log(typeof body);
+      console.log(body.title);
+      return res.end("The server received a POST request for /courses/coding");
+    });
   }
 }
 
