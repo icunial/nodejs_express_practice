@@ -25,6 +25,9 @@ function handleGetRequest(req, res) {
     res.statusCode = 200;
     res.end(JSON.stringify(courses.coding));
   }
+
+  res.statusCode = 404;
+  res.end("The resource does not exist!");
 }
 
 const PORT = process.env.PORT || 5000;
