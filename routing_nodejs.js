@@ -7,6 +7,8 @@ const server = http.createServer((req, res) => {
   switch (method) {
     case "GET":
       return handleGetRequest(req, res);
+    case "POST":
+      return handlePostRequest(req, res);
     default:
       console.log(`Method used is not handled by the server: ${method}`);
   }
@@ -28,6 +30,13 @@ function handleGetRequest(req, res) {
 
   res.statusCode = 404;
   res.end("The resource does not exist!");
+}
+
+function handlePostRequest(req, res) {
+  if (req.url === "/courses/coding") {
+    res.statusCode = 200;
+    res.end("The server received a POST request for /courses/coding");
+  }
 }
 
 const PORT = process.env.PORT || 5000;
