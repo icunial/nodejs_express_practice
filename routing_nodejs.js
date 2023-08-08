@@ -10,7 +10,8 @@ const server = http.createServer((req, res) => {
     case "POST":
       return handlePostRequest(req, res);
     default:
-      console.log(`Method used is not handled by the server: ${method}`);
+      res.statusCode = 501;
+      res.end(`Method used is not handled by the server: ${method}`);
   }
 });
 
@@ -19,23 +20,23 @@ function handleGetRequest(req, res) {
 
   if (path === "/") {
     res.statusCode = 200;
-    res.end("Welcome to my first server and Api created with Node.js");
+    return res.end("Welcome to my first server and Api created with Node.js");
   } else if (path === "/courses") {
     res.statusCode = 200;
-    res.end(JSON.stringify(courses));
+    return res.end(JSON.stringify(courses));
   } else if (path === "/courses/coding") {
     res.statusCode = 200;
-    res.end(JSON.stringify(courses.coding));
+    return res.end(JSON.stringify(courses.coding));
   }
 
   res.statusCode = 404;
-  res.end("The resource does not exist!");
+  return res.end("The resource does not exist!");
 }
 
 function handlePostRequest(req, res) {
   if (req.url === "/courses/coding") {
     res.statusCode = 200;
-    res.end("The server received a POST request for /courses/coding");
+    return res.end("The server received a POST request for /courses/coding");
   }
 }
 
