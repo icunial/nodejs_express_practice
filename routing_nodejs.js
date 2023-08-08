@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
       return handlePostRequest(req, res);
     default:
       res.statusCode = 501;
-      res.end(`Method used is not handled by the server: ${method}`);
+      return res.end(`Method used is not handled by the server: ${method}`);
   }
 });
 
@@ -23,9 +23,11 @@ function handleGetRequest(req, res) {
     return res.end("Welcome to my first server and Api created with Node.js");
   } else if (path === "/courses") {
     res.statusCode = 200;
+    res.writeHead(statusCode, { "Content-Type": "applicaction/json" });
     return res.end(JSON.stringify(courses));
   } else if (path === "/courses/coding") {
     res.statusCode = 200;
+    res.writeHead(statusCode, { "Content-Type": "applicaction/json" });
     return res.end(JSON.stringify(courses.coding));
   }
 
